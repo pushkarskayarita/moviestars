@@ -71,7 +71,7 @@
 
 	function searchMovies(userInput) {
 		return (
-			axios.get(`https://en.wikipedia.org/w/api.php?action=query&list=search&format=json&origin=*&srsearch=${userInput}+incategory:English-language_films`)
+			axios.get(`https://en.wikipedia.org/w/api.php?action=query&list=search&format=json&origin=*&srsearch=${userInput}+incategory:English-language_Netflix_original_programming|English-language_films`)
 		);
 	}
 
