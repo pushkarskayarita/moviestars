@@ -1,0 +1,72 @@
+*{
+    box-sizing: border-box;
+}
+
+.container{
+    width:500px;
+    display: flex;
+    position: relative;
+    flex-wrap:wrap ;
+}
+
+.userInput {
+    min-width: 100%;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
+}
+
+.userInput:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px #B3E5FC;
+}
+
+
+.united {
+    outline: none;
+    box-shadow: 0 10px 24px rgba(33, 33, 33, 0.25), 0 7px 7px rgba(33, 33, 33, 0.22);
+}
+
+.userInput.united,.userInput.united:focus{
+    outline: none;
+    box-shadow: 0 10px 24px rgba(33, 33, 33, 0.25), 0 7px 7px rgba(33, 33, 33, 0.22);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.suggestions {
+    min-width: 100%;
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+    box-shadow: 0 10px 24px rgba(33, 33, 33, 0.25), 0 7px 7px rgba(33, 33, 33, 0.22);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.suggestions li {
+    padding: 10px;
+}
+
+.suggestions li:last-child {
+    margin-bottom: 6px;
+}
+
+.suggestionActive {
+    color: #414141;
+    font-weight: 700;
+}
+
+.suggestionActive,
+.suggestions li:hover {
+    background-color: #EEEEEE;
+    cursor: pointer;
+}
+
+.noSuggestions {
+    color: #999;
+    padding: 0.5rem;
+}
+

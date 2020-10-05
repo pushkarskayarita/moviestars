@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import styles from './Autocomplete.module.css';
+import axios from 'axios';
+
 
 class Autocomplete extends Component {
 
@@ -11,11 +13,31 @@ class Autocomplete extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			activeSuggestion: 0,
+			suggestions:[],
 			filteredSuggestions: [],
+			activeSuggestion: 0,
 			showSuggestions: false,
 			userInput: "",
 		};
+	}
+
+	componentDidMount() {
+		const searchMovies = (userInput) => {
+				return axios.get('https://en.wikipedia.org/w/api.php', {
+					params: {
+						action: "query",
+						list: "search",
+						format: "json",
+						origin: "*",
+						srsearch: `${userInput} incategory:English-language_Netflix_original_programming|English-language_films`,
+					}
+				});
+			}
+		;
+		searchMovies('matrix').then(result => {
+
+			this.setState({suggestions: result.data.query.search.map(elem=>elem.title)})
+		})
 	}
 
 	handleClick = (e) => {
@@ -28,7 +50,7 @@ class Autocomplete extends Component {
 	};
 
 	handleChange = (e) => {
-		const { suggestions } = this.props;
+		const { suggestions } = this.state;
 		const userInput = e.currentTarget.value;
 		const filteredSuggestions = suggestions.filter(
 			suggestion =>
@@ -48,10 +70,12 @@ class Autocomplete extends Component {
 		if (e.keyCode === 13) {
 			//should be network request
 			this.setState({
-				// activeSuggestion: 0,
+				activeSuggestion: 0,
 				showSuggestions: false,
-				// userInput: filteredSuggestions[activeSuggestion]
+				userInput: filteredSuggestions[activeSuggestion]
 			});
+
+
 		} else if (e.keyCode === 38) {
 			if (activeSuggestion === 0) {
 				return;
@@ -115,6 +139,7 @@ class Autocomplete extends Component {
 					   onKeyDown={this.handleKeyDown}
 					   value={userInput} />
 				{suggestionsListComponent}
+				{this.state.suggestions? console.log("Render",this.state.suggestions) : "No data"}
 			</React.Fragment>
 		);
 	}
