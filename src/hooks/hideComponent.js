@@ -4,7 +4,6 @@ export  function useHideComponent(ref,callback) {
 	useEffect(() => {
 		function handleClickOutside(event) {
 			if (ref.current && !ref.current.contains(event.target)) {
-				console.log("Outside click!!!!");
 				callback();
 			}
 		}
@@ -13,5 +12,5 @@ export  function useHideComponent(ref,callback) {
 		return () => {
 			document.removeEventListener("mousedown", handleClickOutside);
 		};
-	}, [ref]);
+	}, [ref,callback]);
 }
