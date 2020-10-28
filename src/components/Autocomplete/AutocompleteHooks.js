@@ -36,9 +36,11 @@ const AutocompleteHooks = ({ fetchCelebrityInfo, toggleIsLoading, resetResults }
 						throw  new Error(`${result.data.error.info}`);
 					}
 					if (result.data.query.search.length) {
-
-						const suggestions = result.data.query.search.map(elem => elem.title)
+						let suggestions = result.data.query.search.map(elem => elem.title)
 							.filter(suggestion => suggestion.toLowerCase().indexOf(debouncedUserInput.toLowerCase()) > -1);
+						if (suggestions.length >= 9) {
+							suggestions = suggestions.slice(0, 8);
+						}
 						setFilteredSuggestions(suggestions);
 					}
 				}).catch(error => {

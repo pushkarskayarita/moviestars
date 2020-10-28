@@ -22,7 +22,7 @@
 
 .userInput:focus {
     outline: none;
-    box-shadow: 0 0 0 4px #D1C4E9;
+    box-shadow: 0 0 0 3px #7986CB;
 }
 
 .united {
@@ -53,7 +53,7 @@
 }
 
 .suggestions li {
-    padding: 10px;
+    padding: 10px 20px;
 }
 
 .suggestions li:last-child {
@@ -73,7 +73,7 @@
 
 .noSuggestions {
     color: #1A237E;
-    padding: 20px;
+    padding: 25px 0;
     font-size:20px;
 
 

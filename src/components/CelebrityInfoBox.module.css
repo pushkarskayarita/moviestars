@@ -1,14 +1,10 @@
 *{box-sizing: border-box}
 
 .container {
-    /*margin: auto;*/
     margin-top: 20px;
     width: 500px;
     display: flex;
-    /*flex-direction: column;*/
     align-items: flex-start;
-    /*justify-content: center;*/
-    /*text-align: center;*/
     background-color: #FFFFFF;
     border-radius: 10px;
 }
@@ -16,7 +12,6 @@
 .hidden{
     display: none;
 }
-
 
 .photoContainer {
     position: relative;
@@ -33,9 +28,7 @@
     left: 0;
     position: absolute;
     width: 100%;
-    /*height: 100%;*/
 }
-
 
 .content{
     width: 50%;
