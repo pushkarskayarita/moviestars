@@ -1,12 +1,19 @@
 *{box-sizing: border-box}
+.wrapper{
+  max-width:500px;
+}
 
 .container {
     margin-top: 20px;
-    width: 500px;
+    width: 100%;
     display: flex;
     align-items: flex-start;
     background-color: #FFFFFF;
     border-radius: 10px;
+    box-shadow: 0 10px  15px rgba(0,0,0,0.23);
+    -moz-box-shadow: 0 10px  15px  rgba(0,0,0,0.23);
+    -webkit-box-shadow: 0 10px 15px  rgba(0,0,0,0.23);
+    -o-box-shadow: 0 10px 15px  rgba(0,0,0,0.23);
 }
 
 .hidden{
@@ -32,18 +39,18 @@
 
 .content{
     width: 50%;
-    margin-top: 10%;
+    margin-top: 7%;
     text-align: center;
     padding: 0 15px;
 }
 
 .content h2{
     color: #ff6f00;
-    font-size: 30px;
+    font-size: 2em;
 }
 
 .content h3{
     color:  #1A237E;
     margin-top: 15px;
-    font-size: 24px;
+    font-size: 1.6em;
 }

@@ -13,7 +13,7 @@ const CelebrityInfoBox = ({ celebrity, toggleIsLoading, isLoading, showInfoBox }
 	}, [toggleIsLoading]);
 
 	return (
-		<div style={{width:'500px'}}>
+		<div className={styles.wrapper} >
 			<div className={(!isLoading && showInfoBox) ? styles.container : `${styles.container} ${styles.hidden}`}>
 				<div className={styles.photoContainer}>
 					{celebrity.imageName ?
