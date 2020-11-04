@@ -1,0 +1,60 @@
+.container {
+    width: 300px;
+    margin: 100px 0;
+    height: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.star {
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    transform-origin: center;
+    animation: bounce 1.5s 0.5s linear infinite;
+}
+
+.first {
+    animation-delay: 0.1s;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.second {
+    animation-delay: 0.2s;
+    position: absolute;
+    top: 0;
+    left: 120px
+}
+
+.third {
+    animation-delay: 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.text {
+    min-width: 100%;
+    font-size: 20px;
+    color: #9E9E9E;
+    position: absolute;
+    bottom: 60px;
+}
+
+@keyframes bounce {
+    0%, 50%, 100% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(0.6);
+    }
+    75% {
+        transform: scale(1.4);
+    }
+}
+
