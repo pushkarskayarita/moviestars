@@ -1,0 +1,85 @@
+*{
+    box-sizing: border-box;
+}
+
+.container{
+    max-width:500px;
+    display: flex;
+    position: relative;
+    flex-wrap:wrap ;
+    z-index: 10000;
+}
+
+.userInput {
+    min-width:100%;
+    font-size: 16px;
+    height:60px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
+}
+
+.userInput:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px #7986CB;
+}
+
+.united {
+    outline: none;
+    box-shadow: 0 10px 24px rgba(33, 33, 33, 0.25), 0 7px 7px rgba(33, 33, 33, 0.22);
+}
+
+.userInput.united,.userInput.united:focus{
+    outline: none;
+    box-shadow: 0 10px 24px rgba(33, 33, 33, 0.25), 0 7px 7px rgba(33, 33, 33, 0.22);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.suggestions {
+    min-width: 100%;
+    margin: 0;
+    font-size: 16px;
+    padding-left: 0;
+    padding-bottom: 16px;
+    list-style: none;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: #FFFFFF;
+    box-shadow: 0 10px  15px rgba(0,0,0,0.23);
+    -moz-box-shadow: 0 10px  15px  rgba(0,0,0,0.23);
+    -webkit-box-shadow: 0 10px 15px  rgba(0,0,0,0.23);
+    -o-box-shadow: 0 10px 15px  rgba(0,0,0,0.23);
+}
+
+.suggestions li {
+    padding: 10px 20px;
+}
+
+.suggestions li:last-child {
+    margin-bottom: 6px;
+}
+
+.suggestionActive {
+    color: #414141;
+    font-weight: 700;
+}
+
+.suggestionActive,
+.suggestions li:hover {
+    background-color: #EEEEEE;
+    cursor: pointer;
+}
+
+.noSuggestions {
+    color: #1A237E;
+    padding: 25px 0;
+    font-size:20px;
+}
+
+@media (max-width:500px) {
+    .userInput{
+        width: 80%;
+    }
+}

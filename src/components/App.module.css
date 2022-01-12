@@ -1,20 +1,150 @@
-body{
-    font-family: 'Noto Sans', sans-serif;
-    font-weight: 400;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: #424242;
 }
 
-h1{
-    font-size: 50px;
+html, body {
+    font-size: 100%;
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 3em;
     font-weight: 900;
-    color:#1A237E;
+    color: #1A237E;
+    margin: 75px 0 35px;
     font-family: 'Mulish', sans-serif;
 }
 
-.container{
-    margin: auto;
-    width: 500px;
+h2 {
+    margin: 4% 0 3%;
+    font-size: 2em;
+    color: #212121;
+}
+
+h3 {
+    margin: 30px 0 25px;
+}
+
+.wrapper {
+    display: flex;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(120deg, #FFD740 40%, #FFC400 80%);;
+}
+
+.container {
+    position: relative;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-align: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.column1 {
+    flex: 1 1 38%;
+    position: relative;
+}
+
+.column2 {
+    flex: 1 1 62%;
+    position: relative;
+    padding-left: 8%;
+}
+
+.camera {
+    padding-left: 5%;
+    width: 40%;
+    position: fixed;
+    bottom: 6%;
+}
+
+.camera img {
+    width: 100%;
+}
+
+.test {
+    margin-top: 100px;
+    background-color: black;
+    width: 200px;
+    height: 200px;
+}
+
+@media (max-width: 1024px) {
+
+    body {
+        font-size: 13.5px;
+    }
+
+    .wrapper {
+        flex-direction: column-reverse;
+    }
+
+    .column1 {
+        width: 50%;
+    }
+
+    .column2 {
+        width: 70%;
+        margin: auto;
+        padding-left: 0;
+    }
+
+    .camera {
+        width: 35%;
+        bottom: 0;
+    }
+
+}
+
+@media (max-width: 650px) {
+    body {
+        font-size: 12px;
+    }
+
+    .column2 {
+        width: 90%;
+        padding: 0 10%;
+    }
+
+    .userInput {
+        width: 80%;
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        font-size: 10px;
+    }
+
+    .column1 {
+        width: 50%;
+    }
+
+    .column2 {
+        margin: auto;
+        width: 100%;
+    }
+}
+
+@media only screen and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+    .camera{
+        width: 50%;
+    }
+}
+
+@media only screen and (device-width: 1024px) and (device-height: 1366px) and (orientation: portrait) {
+    .camera{
+        width: 60%;
+    }
 }
